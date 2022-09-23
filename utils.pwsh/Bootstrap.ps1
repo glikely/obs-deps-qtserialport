@@ -10,7 +10,7 @@ function Bootstrap {
             Bootstrap
     #>
 
-    $script:CurrentDate = Get-Date -Format 'yyyy-MM-dd'
+    $script:DepsVersion = git describe --tags
 
     if ( $script:Target -eq '' ) { $script:Target = $script:HostArchitecture }
 

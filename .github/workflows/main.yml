@@ -38,7 +38,7 @@ jobs:
 
           target='macos-universal'
           artifact_name="qt6-${target}-${{ github.sha }}"
-          file_name="${target%%-*}-deps-qt6-$(date +"%Y-%m-%d")-${target##*-}.tar.xz"
+          file_name="${target%%-*}-deps-qt6-$(git describe --tags)-${target##*-}.tar.xz"
 
           echo "::set-output name=artifactName::${artifact_name}"
           echo "::set-output name=artifactFileName::${file_name}"
@@ -132,7 +132,7 @@ jobs:
         id: setup
         run: |
           $ArtifactName="qt${{ matrix.qtVersion }}-windows-${{ matrix.target }}-${{ matrix.config }}-${{ github.sha }}"
-          $FileName="windows-deps-qt${{ matrix.qtVersion }}-$(Get-Date -Format 'yyyy-MM-dd')-${{ matrix.target }}-${{ matrix.config }}.zip"
+          $FileName="windows-deps-qt${{ matrix.qtVersion }}-$(git describe --tags)-${{ matrix.target }}-${{ matrix.config }}.zip"
 
           Write-Output "::set-output name=artifactName::${ArtifactName}"
           Write-Output "::set-output name=artifactFileName::${FileName}"
