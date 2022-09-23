@@ -106,9 +106,9 @@ function Run-Stages {
 
 function Package-Dependencies {
     if ( $script:PackageName -like 'qt*' ) {
-        $ArchiveFileName = "windows-deps-${PackageName}-${CurrentDate}-${Target}-${Configuration}.zip"
+        $ArchiveFileName = "windows-deps-${PackageName}-${DepsVersion}-${Target}-${Configuration}.zip"
     } else {
-        $ArchiveFileName = "windows-${PackageName}-${CurrentDate}-${Target}.zip"
+        $ArchiveFileName = "windows-${PackageName}-${DepsVersion}-${Target}.zip"
     }
 
     Push-Location -Stack BuildTemp
