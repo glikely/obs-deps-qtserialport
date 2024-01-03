@@ -56,6 +56,7 @@ jobs:
 
   ffmpeg-build:
     name: 'Build FFmpeg'
+    if: false
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
@@ -175,6 +176,7 @@ jobs:
 
   ffmpeg-package-universal:
     name: 'Build FFmpeg (Universal)'
+    if: false
     runs-on: macos-13
     needs: [ffmpeg-build]
     steps:
@@ -209,6 +211,7 @@ jobs:
 
   macos-build:
     name: Build macOS Dependencies
+    if: false
     runs-on: macos-13
     needs: pre-checks
     strategy:
@@ -295,6 +298,7 @@ jobs:
 
   macos-package-universal:
     name: Build macOS Dependencies (Universal)
+    if: false
     runs-on: macos-13
     needs: [pre-checks, macos-build]
     steps:
@@ -423,6 +427,7 @@ jobs:
 
   windows-build:
     name: Build Windows Dependencies
+    if: false
     runs-on: windows-2022
     needs: pre-checks
     strategy:
