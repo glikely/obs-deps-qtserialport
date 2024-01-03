@@ -35,7 +35,7 @@ bootstrap() {
   typeset -g -a skips=()
   typeset -g -i shared_libs=0
   typeset -g -i clean_build=0
-  typeset -g -r current_date=$(date +"%Y-%m-%d")
+  typeset -g -r current_date=$(git describe --tags)
 
   local -i _verbosity=1
 
